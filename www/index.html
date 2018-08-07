@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+<link rel="stylesheet" type="text/css" href="http://bigreni.com/css/pittsburgh/index.css" />
+<!-- Include the jQuery library -->
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<link href="css/select2.min.css" rel="stylesheet" />
+<script src="js/select2.min.js"></script>
+<link rel="stylesheet" href="css/jquery.sidr.dark.min.css">
+<script src="js/jquery.sidr.min.js"></script>
+<title>Port Authority Arrivals</title>
+    <style>
+            /* Hide all the app pages until jQuery Mobile inits to
+               avoid the Flash of Unstyled Content */
+            .splashscreen {
+                width: 100%;
+                height: 100%;
+                border: 0;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index:1001;
+                background: lightgrey;
+                text-shadow: none;
+                color: black;
+            }
+        </style>
+</head>
+<body>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+        var cachebuster = Math.round(new Date().getTime() / 1000);
+        document.write('<script type="text/javascript" src="http://bigreni.com/js/pittsburgh/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+        //document.write('<script type="text/javascript" src="js/main.js?cb=' +cachebuster+'"></scr' + 'ipt>');
+    </script>	
+	<script type="text/javascript" src="js/jsrender.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <div id="screen" class="splashscreen" style="display: none"></div>
+        <script>
+            // Show the splash screen with a loading message
+            // Handler to hide the message when the loading stops
+            window.onload = function () {
+                onLoad();
+                //document.getElementById("screen").style.display = 'none';
+            };
+            document.getElementById("screen").innerHTML = 'Loading...';
+            document.getElementById("screen").style.display = 'block';
+        </script> 
+    <div id="fullpage" data-role="page">
+		<div id="contentBox" class="box">
+                 <h3>Live Arrival Times</h3>
+            <!--<div id="sidr">
+              <ul>
+                <li><a href="index.html" >Arrivals</a></li>
+                <li><a href="javascript:loadFaves();" >Favorites</a></li>
+              </ul>
+            </div>-->
+			<table class="routeBox" style="width: 100vw;">
+                <tr>
+                    <td colspan="2">Show all routes for the stop: 
+                        <label class="switch">
+                          <input id="allRoutes" type="checkbox">
+                          <div class="slider round"></div>
+                        </label>                
+                    </td>
+                </tr>
+				<tr>
+					<td colspan="2">Route:</td>
+                </tr>
+            <tr>
+    	        <td>
+                    <div>
+                        <select id="MainMobileContent_routeList" class="dropList" style="width:90vw;" onchange="getDirections();">
+                            <option value="---">Select a Route</option>
+                            <optgroup label="Light Rail"></optgroup>
+                            <option value="Light Rail:BLLB">BLLB - LIBRARY STATION AND ALLEGHENY</option>
+                            <option value="Light Rail:BLSV">BLSV - S. H. VILLAGE AND ALLEGHENY</option>
+                            <option value="Light Rail:RED">RED - CASTLE SHANNON AND ALLEGHENY</option>
+                            <optgroup label="Port Authority Bus"></optgroup>
+                            <option value="Port Authority Bus:1">1 - FREEPORT ROAD</option>
+                            <option value="Port Authority Bus:11">11 - FINEVIEW</option>
+                            <option value="Port Authority Bus:12">12 - MCKNIGHT</option>
+                            <option value="Port Authority Bus:13">13 - BELLEVUE</option>
+                            <option value="Port Authority Bus:14">14 - OHIO VALLEY</option>
+                            <option value="Port Authority Bus:15">15 - CHARLES</option>
+                            <option value="Port Authority Bus:16">16 - BRIGHTON</option>
+                            <option value="Port Authority Bus:17">17 - SHADELAND</option>
+                            <option value="Port Authority Bus:18">18 - MANCHESTER</option>
+                            <option value="Port Authority Bus:19L">19L - EMSWORTH LIMITED</option>
+                            <option value="Port Authority Bus:2">2 - MOUNT ROYAL</option>
+                            <option value="Port Authority Bus:20">20 - KENNEDY</option>
+                            <option value="Port Authority Bus:21">21 - CORAOPOLIS</option>
+                            <option value="Port Authority Bus:22">22 - MCCOY</option>
+                            <option value="Port Authority Bus:24">24 - WEST PARK</option>
+                            <option value="Port Authority Bus:26">26 - CHARTIERS</option>
+                            <option value="Port Authority Bus:27">27 - FAIRYWOOD</option>
+                            <option value="Port Authority Bus:28X">28X - AIRPORT FLYER</option>
+                            <option value="Port Authority Bus:29">29 - ROBINSON</option>
+                            <option value="Port Authority Bus:31">31 - BRIDGEVILLE</option>
+                            <option value="Port Authority Bus:36">36 - BANKSVILLE</option>
+                            <option value="Port Authority Bus:38">38 - GREEN TREE</option>
+                            <option value="Port Authority Bus:39">39 - BROOKLINE</option>
+                            <option value="Port Authority Bus:4">4 - TROY HILL</option>
+                            <option value="Port Authority Bus:40">40 - MOUNT WASHINGTON</option>
+                            <option value="Port Authority Bus:41">41 - BOWER HILL</option>
+                            <option value="Port Authority Bus:43">43 - BAILEY</option>
+                            <option value="Port Authority Bus:44">44 - VIA KNOXVILLE</option>
+                            <option value="Port Authority Bus:48">48 - ARLINGTON</option>
+                            <option value="Port Authority Bus:51">51 - CARRICK</option>
+                            <option value="Port Authority Bus:51L">51L - CARRICK LIMITED</option>
+                            <option value="Port Authority Bus:52L">52L - HOMEVILLE LIMITED</option>
+                            <option value="Port Authority Bus:53">53 - HOMESTEAD PARK</option>
+                            <option value="Port Authority Bus:53L">53L - HOMESTEAD PARK LIMITED</option>
+                            <option value="Port Authority Bus:54">54 - NORTH SIDE-OAKLAND-SOUTH SIDE</option>
+                            <option value="Port Authority Bus:55">55 - GLASSPORT</option>
+                            <option value="Port Authority Bus:56">56 - LINCOLN PLACE</option>
+                            <option value="Port Authority Bus:57">57 - HAZELWOOD</option>
+                            <option value="Port Authority Bus:58">58 - GREENFIELD</option>
+                            <option value="Port Authority Bus:59">59 - MON VALLEY</option>
+                            <option value="Port Authority Bus:6">6 - SPRING HILL</option>
+                            <option value="Port Authority Bus:60">60 - MCKEESPORT - WALNUT</option>
+                            <option value="Port Authority Bus:61A">61A - NORTH BRADDOCK</option>
+                            <option value="Port Authority Bus:61B">61B - BRADDOCK-SWISSVALE</option>
+                            <option value="Port Authority Bus:61C">61C - MCKEESPORT-HOMESTEAD</option>
+                            <option value="Port Authority Bus:61D">61D - MURRAY</option>
+                            <option value="Port Authority Bus:64">64 - LAWRENCEVILLE - WATERFRONT</option>
+                            <option value="Port Authority Bus:65">65 - SQUIRREL HILL</option>
+                            <option value="Port Authority Bus:67">67 - MONROEVILLE</option>
+                            <option value="Port Authority Bus:68">68 - BRADDOCK HILLS</option>
+                            <option value="Port Authority Bus:69">69 - TRAFFORD</option>
+                            <option value="Port Authority Bus:7">7 - SPRING GARDEN</option>
+                            <option value="Port Authority Bus:71">71 - EDGEWOOD TOWN CENTER</option>
+                            <option value="Port Authority Bus:71A">71A - NEGLEY</option>
+                            <option value="Port Authority Bus:71B">71B - HIGHLAND PARK</option>
+                            <option value="Port Authority Bus:71C">71C - POINT BREEZE</option>
+                            <option value="Port Authority Bus:71D">71D - HAMILTON</option>
+                            <option value="Port Authority Bus:74">74 - HOMEWOOD-SQUIRREL HILL</option>
+                            <option value="Port Authority Bus:75">75 - ELLSWORTH</option>
+                            <option value="Port Authority Bus:77">77 - PENN HILLS</option>
+                            <option value="Port Authority Bus:79">79 - EAST HILLS</option>
+                            <option value="Port Authority Bus:8">8 - PERRYSVILLE</option>
+                            <option value="Port Authority Bus:81">81 - OAK HILL</option>
+                            <option value="Port Authority Bus:82">82 - LINCOLN</option>
+                            <option value="Port Authority Bus:83">83 - BEDFORD HILL</option>
+                            <option value="Port Authority Bus:86">86 - LIBERTY</option>
+                            <option value="Port Authority Bus:87">87 - FRIENDSHIP</option>
+                            <option value="Port Authority Bus:88">88 - PENN</option>
+                            <option value="Port Authority Bus:89">89 - GARFIELD COMMONS</option>
+                            <option value="Port Authority Bus:91">91 - BUTLER STREET</option>
+                            <option value="Port Authority Bus:93">93 - LAWRENCEVILLE - HAZELWOOD</option>
+                            <option value="Port Authority Bus:G2">G2 - WEST BUSWAY</option>
+                            <option value="Port Authority Bus:G3">G3 - MOON FLYER</option>
+                            <option value="Port Authority Bus:G31">G31 - BRIDGEVILLE FLYER</option>
+                            <option value="Port Authority Bus:O1">O1 - ROSS FLYER</option>
+                            <option value="Port Authority Bus:O12">O12 - MCKNIGHT FLYER</option>
+                            <option value="Port Authority Bus:O5">O5 - THOMPSON RUN FLYER VIA 279</option>
+                            <option value="Port Authority Bus:P1">P1 - EAST BUSWAY-ALL STOPS</option>
+                            <option value="Port Authority Bus:P10">P10 - ALLEGHENY VALLEY FLYER</option>
+                            <option value="Port Authority Bus:P12">P12 - HOLIDAY PARK FLYER</option>
+                            <option value="Port Authority Bus:P13">P13 - MOUNT ROYAL FLYER</option>
+                            <option value="Port Authority Bus:P16">P16 - PENN HILLS FLYER</option>
+                            <option value="Port Authority Bus:P17">P17 - LINCOLN PARK FLYER</option>
+                            <option value="Port Authority Bus:P2">P2 - EAST BUSWAY SHORT</option>
+                            <option value="Port Authority Bus:P3">P3 - EAST BUSWAY-OAKLAND</option>
+                            <option value="Port Authority Bus:P67">P67 - MONROEVILLE FLYER</option>
+                            <option value="Port Authority Bus:P68">P68 - BRADDOCK HILLS FLYER</option>
+                            <option value="Port Authority Bus:P69">P69 - TRAFFORD FLYER</option>
+                            <option value="Port Authority Bus:P7">P7 - MCKEESPORT FLYER</option>
+                            <option value="Port Authority Bus:P71">P71 - SWISSVALE FLYER</option>
+                            <option value="Port Authority Bus:P76">P76 - LINCOLN HIGHWAY FLYER</option>
+                            <option value="Port Authority Bus:P78">P78 - OAKMONT FLYER</option>
+                            <option value="Port Authority Bus:Y1">Y1 - LARGE FLYER</option>
+                            <option value="Port Authority Bus:Y45">Y45 - BALDWIN MANOR FLYER</option>
+                            <option value="Port Authority Bus:Y46">Y46 - ELIZABETH FLYER</option>
+                            <option value="Port Authority Bus:Y47">Y47 - CURRY FLYER</option>
+                            <option value="Port Authority Bus:Y49">Y49 - PROSPECT FLYER</option>
+                        </select>
+                    </div>
+                </td>
+					<td><div class="wait"><img id="routeWait" class="hidden wait" src="img/circle.gif" alt="Please wait"/></div></td>
+				</tr>
+				<tr>
+					<td colspan="2">Direction:</td>
+				</tr>	
+                <tr>
+                    	<td><select id="MainMobileContent_directionList" class="dropList" style="width:90vw;" onchange="getStops();">
+                            </select>
+                        </td>
+					<td><div class="wait"><img id="directionWait" class="hidden wait" src="img/circle.gif" alt="Please wait"/></div></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">Stop:</td>
+				</tr>
+                <tr>
+                    <td><select id="MainMobileContent_stopList" class="dropList" style="width:90vw;" onchange="getArrivalTimes();">
+                        </select>
+                    </td>
+					<td><div class="wait"><img id="stopWait" class="hidden wait" src="img/circle.gif" alt="Please wait"/></div></td>
+				</tr>
+			</table>
+                <h2 style="text-align:center;">
+                    <button onclick="saveFavorites();" id="btnSave" style="border:none; background-color: lightgreen; color:black;visibility: hidden;">&#x2764; Add to favorites</button>
+                </h2>
+                <label id="message" style="font-size: large;"></label> 
+                <div class="js-next-bus-results" style="display:none; text-align: center;">
+                </div>
+		</div>
+<div id="footer">
+  <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+  <div class="row" id="bottomNav">
+    <div class="col-xs-6 text-center"><a href="index.html"><i class="glyphicon glyphicon-time"></i><br>Arrivals</a></div>
+    <div class="col-xs-6 text-center"><a href="javascript:loadFaves();"><i class="glyphicon glyphicon glyphicon-star-empty"></i><br>Favorites</a></div>
+  </div>
+  </div>
+</div>
+
+        <script type='text/javascript' src="js/bootstrap.min.js"></script>
+
+</div>
+    	
+</body>
+</html>
