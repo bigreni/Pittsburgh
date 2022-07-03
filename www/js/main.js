@@ -56,8 +56,8 @@
 
     function loadInterstitial() {
         if ((/(android|windows phone)/i.test(navigator.userAgent))) {
-            AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
-            //document.getElementById("screen").style.display = 'none';     
+            //AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
+            document.getElementById("screen").style.display = 'none';     
         } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
             AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
             //document.getElementById("screen").style.display = 'none';     
@@ -74,7 +74,7 @@
         //    window.ga.trackView('Home');
         //});  
         initApp();
-        askRating();
+        //askRating();
         //document.getElementById("screen").style.display = 'none';     
     }
 
@@ -104,7 +104,8 @@ AppRate.promptForRating(false);
 function getDirections() {
     reset();
     var url = encodeURI("https://truetime.portauthority.org/bustime/map/getDirectionsStopsForRoute.jsp?route=" + $("#MainMobileContent_routeList").val());
-	$.get(url, function(data) {processXmlDocumentDirections(data); });    $("span").remove();
+	$.get(url, function(data) {processXmlDocumentDirections(data); });
+    $("span").remove();
     $(".dropList").select2();
 }
 
