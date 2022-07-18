@@ -14,7 +14,8 @@
     } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
     admobid = {
       banner: 'ca-app-pub-1683858134373419/7790106682', 
-      interstitial: 'ca-app-pub-9249695405712287/3050962497'
+      //interstitial: 'ca-app-pub-9249695405712287/3050962497'
+      interstitial: 'ca-app-pub-9249695405712287/5312118508'
     };
   }
 
