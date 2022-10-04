@@ -2,7 +2,7 @@
 
 platform :ios, '11.0'
 
-target 'C:\Users\naiar\Documents\GitHub\Pittsburgh\platforms\ios\Port Authority Bus Tracker' do
-	project 'C:\Users\naiar\Documents\GitHub\Pittsburgh\platforms\ios\Port Authority Bus Tracker.xcodeproj'
+target 'Port Authority Bus Tracker' do
+	project 'Port Authority Bus Tracker.xcodeproj'
 
 end
