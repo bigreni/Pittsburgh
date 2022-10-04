@@ -16,12 +16,14 @@
     "cordova-admobsdk": "^8.13.0",
     "cordova-android": "^10.1.2",
     "cordova-ios": "^6.2.0",
-    "cordova-plugin-admobpro": "^8.13.1"
+    "cordova-plugin-admobpro": "^8.13.1",
+    "cordova-plugin-wkwebview-file-xhr": "^3.1.0"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-admobpro": {},
-      "cordova-admobsdk": {}
+      "cordova-admobsdk": {},
+      "cordova-plugin-wkwebview-file-xhr": {}
     },
     "platforms": [
       "android",

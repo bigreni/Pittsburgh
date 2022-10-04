@@ -94,6 +94,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
     "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-geolocation": "4.1.0"
+    "cordova-plugin-geolocation": "4.1.0",
+    "cordova-plugin-wkwebview-file-xhr": "3.1.0"
   };
 });

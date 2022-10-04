@@ -35,6 +35,8 @@
 		62B6CB19DC124157ABE6371F /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3AA8C18D0D492C93AF448A /* CDVDevice.m */; };
 		F8FA0ED8A01D47D0B979B541 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1988DBB7D1FC4D1086FC314F /* CDVLocation.m */; };
 		68B8CD4404974ABAB29CA9E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F260661B9E34697A157953C /* CoreLocation.framework */; };
+		A80E27AA38384996BD8E277F /* CDVWKWebViewFileXhr.m in Sources */ = {isa = PBXBuildFile; fileRef = 13245634137E4F4D8C7E9012 /* CDVWKWebViewFileXhr.m */; };
+		D1EA86F8D91E4A2192338760 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A84CB3C3B9A45629435E895 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,9 @@
 		1988DBB7D1FC4D1086FC314F /* CDVLocation.m */ = {isa = PBXFileReference; name = "CDVLocation.m"; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		06C2DC7909EC41B4A8A518AF /* CDVLocation.h */ = {isa = PBXFileReference; name = "CDVLocation.h"; path = "cordova-plugin-geolocation/CDVLocation.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		4F260661B9E34697A157953C /* CoreLocation.framework */ = {isa = PBXFileReference; name = "CoreLocation.framework"; path = "System/Library/Frameworks/CoreLocation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		13245634137E4F4D8C7E9012 /* CDVWKWebViewFileXhr.m */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.m"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		6EA1FE4AFD654E2A8D92533D /* CDVWKWebViewFileXhr.h */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.h"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		2A84CB3C3B9A45629435E895 /* WebKit.framework */ = {isa = PBXFileReference; name = "WebKit.framework"; path = "System/Library/Frameworks/WebKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +138,7 @@
 				7D6594E7496B4ABA9C6481AB /* AudioToolbox.framework in Frameworks */,
 				AB29A755B0E945938DAACEF6 /* StoreKit.framework in Frameworks */,
 				68B8CD4404974ABAB29CA9E3 /* CoreLocation.framework in Frameworks */,
+				D1EA86F8D91E4A2192338760 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +222,7 @@
 				C6354457A60C4FF687F69A48 /* AudioToolbox.framework */,
 				D91AE68B48884BB69BA5C455 /* StoreKit.framework */,
 				4F260661B9E34697A157953C /* CoreLocation.framework */,
+				2A84CB3C3B9A45629435E895 /* WebKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,6 +267,8 @@
 				E75CF5788F2447BD9620D55C /* CDVDevice.h */,
 				1988DBB7D1FC4D1086FC314F /* CDVLocation.m */,
 				06C2DC7909EC41B4A8A518AF /* CDVLocation.h */,
+				13245634137E4F4D8C7E9012 /* CDVWKWebViewFileXhr.m */,
+				6EA1FE4AFD654E2A8D92533D /* CDVWKWebViewFileXhr.h */,
 			);
 			name = Plugins;
 			path = "Port Authority Bus Tracker/Plugins";
@@ -397,6 +406,7 @@
 				CCC4A1628FAE42AC928753C4 /* CDVAppRate.m in Sources */,
 				62B6CB19DC124157ABE6371F /* CDVDevice.m in Sources */,
 				F8FA0ED8A01D47D0B979B541 /* CDVLocation.m in Sources */,
+				A80E27AA38384996BD8E277F /* CDVWKWebViewFileXhr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

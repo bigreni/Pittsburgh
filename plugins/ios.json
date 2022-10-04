@@ -27,6 +27,9 @@
     "cordova-plugin-geolocation": {
       "GPS_REQUIRED": "true",
       "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
     }
   },
   "dependent_plugins": {

@@ -10,7 +10,6 @@
     <content src="index.html" />
 	<preference name="android-build-tool" value="gradle" /> 
     <cdv:plugin name="cordova-plugin-admobpro" source="npm" >
-        <variable name="ADMOB_APP_ID" value="pub-9249695405712287"></variable>
     </cdv:plugin>
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
@@ -31,6 +30,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
+    <cdv:plugin name="cordova-plugin-wkwebview-file-xhr" source="npm"/>
     <cdv:plugin name="cordova-plugin-statusbar" source="npm"/>
     <cdv:plugin name="cordova-plugin-device" source="npm" />
     <cdv:plugin name="cordova-plugin-device-motion" source="npm"/>
@@ -49,12 +49,21 @@
     <allow-intent href="geo:*" />
 	<icon src="icon.png" />
     <platform name="android">
+	<preference name="ADMOB_ANDROID_APP_ID" default="ca-app-pub-9249695405712287~6293300517"/>
+	<preference name="PLAY_SERVICES_VERSION" default="20.4.0"/>
         <allow-intent href="market:*" />
 		<edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
             <application android:usesCleartextTraffic="true" />
     </edit-config>
     </platform>
     <platform name="ios">
+        <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+            <string>Need location access to find things nearby</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSUserTrackingUsageDescription">
+            <string>Used to remember and personalize your experience</string>
+        </edit-config>
+        <preference name="ADMOB_IOS_APP_ID" default="ca-app-pub-9249695405712287~9998958846"/>
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
 	    <icon height="57" src="res/icon/ios/Icon57.png" width="57" />
@@ -67,5 +76,6 @@
 		<icon height="50" src="res/icon/ios/Icon50.png" width="50" />
 		<icon height="40" src="res/icon/ios/Icon40.png" width="40" />
 		<icon height="100" src="res/icon/ios/Icon100.png" width="100" />	
+		<icon height="167" src="res/icon/ios/Icon167.png" width="167" />	
     </platform>
 </widget>

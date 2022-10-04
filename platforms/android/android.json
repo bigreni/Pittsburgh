@@ -118,6 +118,9 @@
     "cordova-plugin-geolocation": {
       "GPS_REQUIRED": "true",
       "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
     }
   },
   "dependent_plugins": {},
@@ -216,6 +219,7 @@
     "cordova-plugin-nativestorage": "2.3.2",
     "cordova-plugin-apprate": "1.7.2",
     "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-geolocation": "4.1.0"
+    "cordova-plugin-geolocation": "4.1.0",
+    "cordova-plugin-wkwebview-file-xhr": "3.1.0"
   }
 }
