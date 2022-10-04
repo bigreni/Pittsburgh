@@ -41,10 +41,13 @@ function registerAdEvents() {
         document.getElementById('screen').style.display = 'none';     
     });
     document.addEventListener('onAdLoaded', function (data) {
-        AdMob.showInterstitial();
+        document.getElementById("screen").style.display = 'none';     
+        //AdMob.showInterstitial();
     });
     document.addEventListener('onAdPresent', function (data) { });
-    document.addEventListener('onAdLeaveApp', function (data) { });
+    document.addEventListener('onAdLeaveApp', function (data) { 
+        document.getElementById("screen").style.display = 'none';     
+    });
     document.addEventListener('onAdDismiss', function (data) { 
         document.getElementById('screen').style.display = 'none';     
     });
@@ -56,11 +59,9 @@ function createSelectedBanner() {
 
 function loadInterstitial() {
     if ((/(android|windows phone)/i.test(navigator.userAgent))) {
-        //AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
-        document.getElementById("screen").style.display = 'none';     
+        AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
     } else if ((/(ipad|iphone|ipod)/i.test(navigator.userAgent))) {
-        AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: true });
-        //document.getElementById("screen").style.display = 'none';     
+        AdMob.prepareInterstitial({ adId: admobid.interstitial, isTesting: false, autoShow: false });
     } else
     {
         document.getElementById("screen").style.display = 'none';     
@@ -70,11 +71,7 @@ function loadInterstitial() {
 function checkFirstUse()
 {
     $(".dropList").select2();
-    //window.ga.startTrackerWithId('UA-88579601-17', 1, function(msg) {
-    //    window.ga.trackView('Home');
-    //});  
     initApp();
-    //askRating();
     //document.getElementById("screen").style.display = 'none';     
 }
 
@@ -161,6 +158,7 @@ function processXmlDocumentStops(xml)
 }
 
 function getArrivalTimes() {
+showAd();    
 reset();
 var allRoutes = document.getElementById('allRoutes');
 var url = encodeURI("https://truetime.portauthority.org/bustime/eta/getStopPredictionsETA.jsp?route=" + $("#MainMobileContent_routeList").val() + "&stop=" + $("#MainMobileContent_stopList").val());
@@ -208,8 +206,6 @@ function processXmlDocumentPredictions(xml)
 function displayError(error) {
 }
 
-
-
 function reset() {
 $('.js-next-bus-results').html('').hide(); // reset output container's html
 document.getElementById('btnSave').style.visibility = "hidden";
@@ -246,5 +242,18 @@ if (allRoutes != null) {
 
 function loadFaves()
 {
+showAd();
 window.location = "Favorites.html";
+}
+
+function showAd()
+{
+document.getElementById("screen").style.display = 'block';     
+if ((/(ipad|iphone|ipod|android|windows phone)/i.test(navigator.userAgent))) {
+    AdMob.isInterstitialReady(function(isready){
+        if(isready) 
+            AdMob.showInterstitial();
+    });
+}
+document.getElementById("screen").style.display = 'none'; 
 }

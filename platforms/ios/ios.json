@@ -7,6 +7,22 @@
     "files": {
       "*-Info.plist": {
         "parents": {
+          "NSLocationWhenInUseUsageDescription": [
+            {
+              "xml": "<string>Need location access to find things nearby</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ],
+          "NSUserTrackingUsageDescription": [
+            {
+              "xml": "<string>Used to remember and personalize your experience</string>",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml"
+            }
+          ],
           "SKAdNetworkItems": [
             {
               "xml": "<key>SKAdNetworkItems</key>",

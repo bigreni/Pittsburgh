@@ -28,8 +28,8 @@
     </author>
     <content src="index.html" />
     <cdv:plugin name="cordova-plugin-admobpro" source="npm">
-        <variable name="ADMOB_APP_ID" value="pub-9249695405712287" />
     </cdv:plugin>
+    <cdv:plugin name="cordova-plugin-wkwebview-file-xhr" source="npm" />
     <cdv:plugin name="cordova-plugin-statusbar" source="npm" />
     <cdv:plugin name="cordova-plugin-device" source="npm" />
     <cdv:plugin name="cordova-plugin-device-motion" source="npm" />
@@ -47,6 +47,8 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <icon src="icon.png" />
+    <preference default="ca-app-pub-9249695405712287~6293300517" name="ADMOB_ANDROID_APP_ID" />
+    <preference default="20.4.0" name="PLAY_SERVICES_VERSION" />
     <allow-intent href="market:*" />
     <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/application">
         <application android:usesCleartextTraffic="true" />

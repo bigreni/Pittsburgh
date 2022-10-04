@@ -190,5 +190,9 @@
 	<string>ca-app-pub-1855415514372943~7447337312</string>
 	<key>GADDelayAppMeasurementInit</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need location access to find things nearby</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Used to remember and personalize your experience</string>
 </dict>
 </plist>
