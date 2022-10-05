@@ -118,6 +118,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "file": "plugins/cordova-plugin-wkwebview-file-xhr/src/www/ios/whatwg-fetch-2.0.3.js",
       "pluginId": "cordova-plugin-wkwebview-file-xhr",
       "runs": true
+    },
+    {
+      "id": "cordova-plugin-idfa.Idfa",
+      "file": "plugins/cordova-plugin-idfa/www/Idfa.js",
+      "pluginId": "cordova-plugin-idfa",
+      "merges": [
+        "cordova.plugins.idfa"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -129,6 +137,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-apprate": "1.7.2",
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-geolocation": "4.1.0",
-    "cordova-plugin-wkwebview-file-xhr": "3.1.0"
+    "cordova-plugin-wkwebview-file-xhr": "3.1.0",
+    "cordova-plugin-idfa": "2.1.0"
   };
 });

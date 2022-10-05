@@ -74,4 +74,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
+    <feature name="Idfa">
+        <param name="android-package" value="by.chemerisuk.cordova.advertising.IdfaPlugin" />
+    </feature>
 </widget>

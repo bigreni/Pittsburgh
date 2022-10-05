@@ -30,6 +30,9 @@
     },
     "cordova-plugin-wkwebview-file-xhr": {
       "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-idfa": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
     }
   },
   "dependent_plugins": {

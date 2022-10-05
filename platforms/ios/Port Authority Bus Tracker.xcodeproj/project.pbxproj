@@ -37,6 +37,9 @@
 		F106BB29A7FB4F30979942B1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C048372479254AA2A7E3BD89 /* CoreLocation.framework */; };
 		4F5DD9D65E8446F7A6FEAA36 /* CDVWKWebViewFileXhr.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB70C52EEA44716B99D50D0 /* CDVWKWebViewFileXhr.m */; };
 		FB36596B985B48E6A4336582 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42400B57C0954AE8BF8C57C7 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E96B154881A54072B0241D37 /* IdfaPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = DE7A2FC33D7F495C97034A8E /* IdfaPlugin.m */; };
+		848B7C023E7B4500BBC86686 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558D43399DB24366A6E9F55E /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2FA57C0E29E540339C127E59 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BCF4D86F2EC4C72B54E86BC /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,10 @@
 		0EB70C52EEA44716B99D50D0 /* CDVWKWebViewFileXhr.m */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.m"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		CF66790A948A41D3A749688C /* CDVWKWebViewFileXhr.h */ = {isa = PBXFileReference; name = "CDVWKWebViewFileXhr.h"; path = "cordova-plugin-wkwebview-file-xhr/CDVWKWebViewFileXhr.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		42400B57C0954AE8BF8C57C7 /* WebKit.framework */ = {isa = PBXFileReference; name = "WebKit.framework"; path = "System/Library/Frameworks/WebKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		DE7A2FC33D7F495C97034A8E /* IdfaPlugin.m */ = {isa = PBXFileReference; name = "IdfaPlugin.m"; path = "cordova-plugin-idfa/IdfaPlugin.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		335A97489DD14C37A3DBD8F4 /* IdfaPlugin.h */ = {isa = PBXFileReference; name = "IdfaPlugin.h"; path = "cordova-plugin-idfa/IdfaPlugin.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		558D43399DB24366A6E9F55E /* AdSupport.framework */ = {isa = PBXFileReference; name = "AdSupport.framework"; path = "System/Library/Frameworks/AdSupport.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		2BCF4D86F2EC4C72B54E86BC /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; name = "AppTrackingTransparency.framework"; path = "System/Library/Frameworks/AppTrackingTransparency.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +146,8 @@
 				445E1F13F31D4950867A96F4 /* StoreKit.framework in Frameworks */,
 				F106BB29A7FB4F30979942B1 /* CoreLocation.framework in Frameworks */,
 				FB36596B985B48E6A4336582 /* WebKit.framework in Frameworks */,
+				848B7C023E7B4500BBC86686 /* AdSupport.framework in Frameworks */,
+				2FA57C0E29E540339C127E59 /* AppTrackingTransparency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +232,8 @@
 				A32B6AC62F7C42F9A335CAAA /* StoreKit.framework */,
 				C048372479254AA2A7E3BD89 /* CoreLocation.framework */,
 				42400B57C0954AE8BF8C57C7 /* WebKit.framework */,
+				558D43399DB24366A6E9F55E /* AdSupport.framework */,
+				2BCF4D86F2EC4C72B54E86BC /* AppTrackingTransparency.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -269,6 +280,8 @@
 				4C2D52E6236B4394AAFBB1AF /* CDVLocation.h */,
 				0EB70C52EEA44716B99D50D0 /* CDVWKWebViewFileXhr.m */,
 				CF66790A948A41D3A749688C /* CDVWKWebViewFileXhr.h */,
+				DE7A2FC33D7F495C97034A8E /* IdfaPlugin.m */,
+				335A97489DD14C37A3DBD8F4 /* IdfaPlugin.h */,
 			);
 			name = Plugins;
 			path = "Port Authority Bus Tracker/Plugins";
@@ -407,6 +420,7 @@
 				36F95AFDC6344A89AEF15C97 /* CDVDevice.m in Sources */,
 				C4B6F7B212874EBA9FD40A7B /* CDVLocation.m in Sources */,
 				4F5DD9D65E8446F7A6FEAA36 /* CDVWKWebViewFileXhr.m in Sources */,
+				E96B154881A54072B0241D37 /* IdfaPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

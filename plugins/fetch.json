@@ -72,5 +72,23 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-idfa": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-idfa@^2.1.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROID_PLAY_ADID_VERSION": "'16.+'"
+    }
+  },
+  "cordova-support-android-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-support-android-plugin@~2.0.4"
+    },
+    "is_top_level": false,
+    "variables": {}
   }
 }
