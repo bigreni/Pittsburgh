@@ -71,13 +71,8 @@
 
    function checkFirstUse()
     {
-        $(".dropList").select2();
-        //window.ga.startTrackerWithId('UA-88579601-17', 1, function(msg) {
-        //    window.ga.trackView('Home');
-        //});  
-        initApp();
-        //askRating();
-        //document.getElementById("screen").style.display = 'none';     
+        $(".dropList").select2(); 
+        initApp();   
     }
 
    function notFirstUse()

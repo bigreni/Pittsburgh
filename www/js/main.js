@@ -71,8 +71,8 @@ function loadInterstitial() {
 function checkFirstUse()
 {
     $(".dropList").select2();
-    checkPermissions();
     initApp();
+    checkPermissions();
     //document.getElementById("screen").style.display = 'none';     
 }
 
