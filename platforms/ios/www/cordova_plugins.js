@@ -126,6 +126,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "merges": [
         "cordova.plugins.idfa"
       ]
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -138,6 +146,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-device": "2.0.3",
     "cordova-plugin-geolocation": "4.1.0",
     "cordova-plugin-wkwebview-file-xhr": "3.1.0",
-    "cordova-plugin-idfa": "2.1.0"
+    "cordova-plugin-idfa": "2.1.0",
+    "cordova-plugin-inappbrowser": "5.0.0"
   };
 });

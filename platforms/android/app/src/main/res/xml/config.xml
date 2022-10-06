@@ -77,4 +77,7 @@
     <feature name="Idfa">
         <param name="android-package" value="by.chemerisuk.cordova.advertising.IdfaPlugin" />
     </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
 </widget>
