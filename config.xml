@@ -38,6 +38,7 @@
     <cdv:plugin name="cordova-plugin-dialogs" source="npm"/>
     <cdv:plugin name="cordova-plugin-apprate" source="npm"/>
     <cdv:plugin name="cordova-plugin-idfa" source="npm"/>
+    <cdv:plugin name="cordova-plugin-inappbrowser" source="npm"/>
     <allow-navigation href="http://*/*" />
     <allow-navigation href="https://*/*" />
     <allow-navigation href="data:*" />	
