@@ -7,16 +7,8 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-admobsdk": {
-      "PACKAGE_NAME": "com.pittsburgh.free"
-    },
-    "cordova-plugin-admobpro": {
-      "ADMOB_ANDROID_APP_ID": "ca-app-pub-1855415514372943~9063671314",
-      "PLAY_SERVICES_VERSION": "20.4.0",
-      "PACKAGE_NAME": "com.pittsburgh.free"
-    },
     "cordova-plugin-apprate": {
-      "PLAY_CORE_VERSION": "1.+",
+      "PLAY_REVIEW_VERSION": "2.+",
       "PACKAGE_NAME": "com.pittsburgh.free"
     },
     "cordova-plugin-device": {
@@ -29,21 +21,26 @@
       "GPS_REQUIRED": "true",
       "PACKAGE_NAME": "com.pittsburgh.free"
     },
-    "cordova-plugin-wkwebview-file-xhr": {
-      "PACKAGE_NAME": "com.pittsburgh.free"
-    },
     "cordova-plugin-idfa": {
       "ANDROID_PLAY_ADID_VERSION": "17.0.+",
       "PACKAGE_NAME": "com.pittsburgh.free"
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-purchase": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~6293300517",
+      "PLAY_SERVICES_VERSION": "23.0.0",
+      "PACKAGE_NAME": "com.pittsburgh.free"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-extension": {
-      "PACKAGE_NAME": "com.pittsburgh.free"
-    },
     "cordova-plugin-nativestorage": {
       "PACKAGE_NAME": "com.pittsburgh.free"
     },

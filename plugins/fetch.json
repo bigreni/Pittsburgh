@@ -1,12 +1,4 @@
 {
-  "cordova-plugin-admobpro": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-admobpro"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-extension": {
     "source": {
       "type": "registry",
@@ -31,16 +23,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-apprate": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-apprate"
-    },
-    "is_top_level": true,
-    "variables": {
-      "PLAY_CORE_VERSION": "1.+"
-    }
-  },
   "cordova-plugin-nativestorage": {
     "source": {
       "type": "registry",
@@ -49,18 +31,52 @@
     "is_top_level": false,
     "variables": {}
   },
+  "cordova-support-android-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-support-android-plugin@~2.0.4"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-apprate": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-apprate"
+    },
+    "is_top_level": true,
+    "variables": {
+      "PLAY_REVIEW_VERSION": "2.+"
+    }
+  },
   "cordova-plugin-geolocation": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-geolocation@4.1.0"
+      "id": "cordova-plugin-geolocation@5.0.0"
     },
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-admobsdk": {
+  "cordova-plugin-idfa": {
     "source": {
       "type": "registry",
-      "id": "cordova-admobsdk"
+      "id": "cordova-plugin-idfa"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-purchase": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-purchase"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser@6.0.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -73,30 +89,15 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-idfa": {
+  "admob-plus-cordova": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-idfa@^2.1.0"
+      "id": "admob-plus-cordova"
     },
     "is_top_level": true,
     "variables": {
-      "ANDROID_PLAY_ADID_VERSION": "'16.+'"
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~6293300517",
+      "APP_ID_IOS": "ca-app-pub-9249695405712287~9998958846"
     }
-  },
-  "cordova-support-android-plugin": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-support-android-plugin@~2.0.4"
-    },
-    "is_top_level": false,
-    "variables": {}
-  },
-  "cordova-plugin-inappbrowser": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-inappbrowser@5.0.0"
-    },
-    "is_top_level": true,
-    "variables": {}
   }
 }

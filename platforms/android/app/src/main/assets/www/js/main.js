@@ -72,6 +72,7 @@ function checkFirstUse()
 {
     $(".dropList").select2();
     initApp();
+    checkPermissions();
     //document.getElementById("screen").style.display = 'none';     
 }
 
@@ -81,10 +82,32 @@ function notFirstUse()
     document.getElementById("screen").style.display = 'none';     
 }
 
+function checkPermissions(){
+    const idfaPlugin = cordova.plugins.idfa;
+
+    idfaPlugin.getInfo()
+        .then(info => {
+            if (!info.trackingLimited) {
+                return info.idfa || info.aaid;
+            } else if (info.trackingPermission === idfaPlugin.TRACKING_PERMISSION_NOT_DETERMINED) {
+                return idfaPlugin.requestPermission().then(result => {
+                    if (result === idfaPlugin.TRACKING_PERMISSION_AUTHORIZED) {
+                        return idfaPlugin.getInfo().then(info => {
+                            return info.idfa || info.aaid;
+                        });
+                    }
+                });
+            }
+        });
+}
+
 function askRating()
 {
-AppRate.preferences = {
-openStoreInApp: true,
+cordova.plugins.AppRate.setPreferences = {
+reviewType: {
+    ios: 'AppStoreReview',
+    android: 'InAppBrowser'
+    },
 useLanguage:  'en',
 usesUntilPrompt: 10,
 promptAgainForEachNewVersion: true,
