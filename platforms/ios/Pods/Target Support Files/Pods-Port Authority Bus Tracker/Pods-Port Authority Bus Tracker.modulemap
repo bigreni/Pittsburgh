@@ -1,0 +1,6 @@
+framework module Pods_Port_Authority_Bus_Tracker {
+  umbrella header "Pods-Port Authority Bus Tracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

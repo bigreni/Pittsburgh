@@ -1,0 +1,50 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "admob-plus-cordova": {
+      "APP_ID_IOS": "ca-app-pub-9249695405712287~9998958846",
+      "USAGE": "This identifier will be used to deliver personalized ads to you.",
+      "DISABLESDKCRASHREPORTING": "false",
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-apprate": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-idfa": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-purchase": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-nativestorage": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
+    "cordova-support-android-plugin": {
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    }
+  }
+}
