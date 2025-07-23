@@ -72,7 +72,7 @@ function onProductUpdated() {
   function onTransactionApproved(transaction)
   {
     //document.getElementById("plans").innerHTML = "";
-    if(transaction.products[0].id != 'com.bridgeport.free')
+    if(transaction.products[0].id != 'com.pittsburgh.free')
     {
         if(owned == null || owned == 0)
         {

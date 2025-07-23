@@ -7,6 +7,11 @@
     "files": {}
   },
   "installed_plugins": {
+    "admob-plus-cordova": {
+      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~6293300517",
+      "PLAY_SERVICES_VERSION": "23.0.0",
+      "PACKAGE_NAME": "com.pittsburgh.free"
+    },
     "cordova-plugin-apprate": {
       "PLAY_REVIEW_VERSION": "2.+",
       "PACKAGE_NAME": "com.pittsburgh.free"
@@ -32,11 +37,6 @@
       "PACKAGE_NAME": "com.pittsburgh.free"
     },
     "cordova-plugin-wkwebview-file-xhr": {
-      "PACKAGE_NAME": "com.pittsburgh.free"
-    },
-    "admob-plus-cordova": {
-      "APP_ID_ANDROID": "ca-app-pub-9249695405712287~6293300517",
-      "PLAY_SERVICES_VERSION": "23.0.0",
       "PACKAGE_NAME": "com.pittsburgh.free"
     }
   },

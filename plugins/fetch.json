@@ -65,14 +65,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-purchase": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-purchase"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-inappbrowser": {
     "source": {
       "type": "registry",
@@ -99,5 +91,13 @@
       "APP_ID_ANDROID": "ca-app-pub-9249695405712287~6293300517",
       "APP_ID_IOS": "ca-app-pub-9249695405712287~9998958846"
     }
+  },
+  "cordova-plugin-purchase": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-purchase"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

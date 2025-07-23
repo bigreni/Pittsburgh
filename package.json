@@ -13,14 +13,14 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "cordova-android": "^13.0.0",
+    "cordova-android": "^14.0.1",
     "cordova-ios": "^7.1.1",
     "cordova-plugin-apprate": "^1.8.0",
     "cordova-plugin-geolocation": "^5.0.0",
     "cordova-plugin-idfa": "^3.0.0",
     "cordova-plugin-inappbrowser": "^6.0.0",
     "cordova-plugin-nativestorage": "^2.3.2",
-    "cordova-plugin-purchase": "^13.11.1",
+    "cordova-plugin-purchase": "^13.12.1",
     "cordova-plugin-wkwebview-file-xhr": "^3.1.1",
     "cordova-support-android-plugin": "~2.0.4"
   },
@@ -35,18 +35,18 @@
       "cordova-plugin-idfa": {
         "ANDROID_PLAY_ADID_VERSION": "17.0.+"
       },
-      "cordova-plugin-purchase": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-wkwebview-file-xhr": {},
       "admob-plus-cordova": {
         "APP_ID_ANDROID": "ca-app-pub-9249695405712287~6293300517",
         "APP_ID_IOS": "ca-app-pub-9249695405712287~9998958846",
         "PLAY_SERVICES_VERSION": "23.0.0"
-      }
+      },
+      "cordova-plugin-purchase": {}
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   },
   "dependencies": {

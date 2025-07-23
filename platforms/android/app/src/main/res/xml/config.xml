@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.pittsburgh.free" version="3.0" versionCode="300" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.pittsburgh.free" version="4.0" versionCode="400" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="AdMob">
+        <param name="android-package" value="admob.plus.cordova.AdMob" />
+    </feature>
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
@@ -80,14 +83,11 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="26" />
-    <preference name="android-targetSdkVersion" value="34" />
+    <preference name="android-targetSdkVersion" value="35" />
     <preference name="android-installLocation" value="auto" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="InterceptRemoteRequests" value="all" />
     <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/screen-all.png" />
     <preference name="AndroidWindowSplashScreenAnimationDuration" value="1" />
-    <feature name="AdMob">
-        <param name="android-package" value="admob.plus.cordova.AdMob" />
-    </feature>
 </widget>

@@ -10,9 +10,9 @@ function initApp() {
     if (/(android)/i.test(navigator.userAgent)){
         interstitial = new admob.InterstitialAd({
             //dev
-            adUnitId: 'ca-app-pub-3940256099942544/1033173712'
+            //adUnitId: 'ca-app-pub-3940256099942544/1033173712'
             //prod
-            //adUnitId: 'ca-app-pub-9249695405712287/4604126430'
+            adUnitId: 'ca-app-pub-9249695405712287/4604126430'
           });
         }
         else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent) || (navigator.userAgent.includes("Mac") && "ontouchend" in document)) {
@@ -47,6 +47,7 @@ function registerAdEvents() {
 function checkFirstUse()
 {
     $(".dropList").select2();
+    getRoutes();
     initApp();
     checkPermissions();
     askRating();
@@ -56,6 +57,7 @@ function checkFirstUse()
 function notFirstUse()
 {
     $(".dropList").select2();
+    getRoutes();
     document.getElementById("screen").style.display = 'none';     
 }
 
@@ -97,6 +99,44 @@ function askRating()
 
     AppRate.promptForRating(false);
 }
+
+    function getRoutes() {
+    //$("#MainMobileContent_routeList").text("Loading	routes...");
+        $("#routeWait").removeClass("hidden");
+
+        $.ajax({
+            type: "GET",
+            //url: "https://metromap.cityofmadison.com/bustime/api/v3/getroutes?requestType=getroutes&locale=en&key=Qskvu4Z5JDwGEVswqdAVkiA5B&format=json&xtime=1749310074913",
+            url: "https://truetime.rideprt.org/bustime/api/v3/getroutes?key=bifpGHNBzNLEAhWzZ3H8LdQnu&format=json",
+
+            //url: "http://webwatch.cityofmadison.com/TMWebWatch/Arrivals.aspx/getRoutes",
+            //contentType: "application/json;	charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                if (msg["bustime-response"].routes == null || msg["bustime-response"].routes.length == 0) {
+                    $("#MainMobileContent_routeList").text("No routes found");
+                    return;
+                }
+
+                var list = $("#MainMobileContent_routeList");
+                var routes = msg["bustime-response"].routes;
+                $(list).get(0).options[$(list).get(0).options.length] = new Option("Select a route...", "0");
+                $.each(routes, function (index, item) {
+                    $(list).append($("<option />").val(item.rtpidatafeed + ':' + item.rt).text(item.rt + ' - ' + item.rtnm));
+                    //$(list).get(0).options[$(list).get(0).options.length] = new Option(item.name, item.id);
+                });
+                $(list).val('0');
+            },
+            error: function () {
+                $("#MainMobileContent_routeList").text("Failed to load routes");
+            },
+            complete: function (jqXHR, textStatus) {
+                $("#routeWait").addClass("hidden");
+            }
+        });
+        $("span").remove();
+        $(".dropList").select2();
+    }
 
 
 function getDirections() {
